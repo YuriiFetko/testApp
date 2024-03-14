@@ -1,0 +1,6 @@
+<div class="container" appDragAndDrop (fileDropped)="onFileDropped($event)">
+  <input type="file" id="fileDropRef" (change)="onFileBrowseHandler($event.target)"/>
+  <p>Перетягніть файлу сертифікату сюди</p>
+  <p>або</p>
+  <button class="action-btn-block"><label for="fileDropRef">Виберіть через стандартний діалог</label></button>
+</div>

@@ -1,0 +1,17 @@
+<div class="certificate-content-list">
+
+  <div *ngIf="(certificates$ | async)?.length === 0; else certList" class="empty-text">
+    <p>Немає жодного сертифікату</p>
+  </div>
+
+  <ng-template #certList>
+    <div class="certificate-item"
+         *ngFor="let certificate of certificates$ | async; trackBy: trackById"
+         [ngClass]="{'active': isActive(certificate)}"
+         (click)="onSelectCertificate(certificate)">
+      <h3>{{certificate.commonName}}</h3>
+      <div *ngIf="isActive(certificate)" class="triangle-right"></div>
+    </div>
+  </ng-template>
+
+</div>

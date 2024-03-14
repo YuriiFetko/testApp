@@ -1,0 +1,44 @@
+.certificate-content-list {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.certificate-item {
+  border: 1px solid;
+  border-bottom: 0;
+  cursor: pointer;
+  padding: 0 20px 0 10px;
+}
+
+.certificate-item:last-child {
+  border-bottom: 1px solid;
+}
+
+.certificate-item {
+  cursor: pointer;
+  position: relative;
+}
+
+.empty-text {
+  text-align: center;
+}
+
+.certificate-item.active {
+  background-color: #f1f1f1;
+}
+
+.certificate-item.active::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #000;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

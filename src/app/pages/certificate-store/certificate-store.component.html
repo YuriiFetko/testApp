@@ -1,0 +1,33 @@
+<div class="certificate-content">
+
+  <div class="certificate-content-list">
+    <div class="action-btn-block">
+      <button class="action-btn" (click)="toggleAddFileWindow()">
+        {{ showAddFileWindow ? 'Назад' : 'Додати' }}
+      </button>
+    </div>
+
+    <app-certificates-list [certificates$]="certificates$"
+                           [lastAddedCertificate]="lastAddedCertificate"
+                           (onSelectCertificateEmit)="onSelectCertificate($event)"
+    ></app-certificates-list>
+
+  </div>
+
+  <div>
+
+    <ng-container *ngIf="showAddFileWindow">
+      <app-certificate-create (onFileBrowseEmit)="fileBrowseHandler($event)"
+                              (onFileDroppedEmit)="onFileDropped($event)"
+      ></app-certificate-create>
+    </ng-container>
+
+    <ng-container *ngIf="lastAddedCertificate">
+      <app-certificate-details [certificate]="lastAddedCertificate"></app-certificate-details>
+    </ng-container>
+
+  </div>
+</div>
+
+
+

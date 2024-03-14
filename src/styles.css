@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 450px;
+  height: 200px;
+  padding: 2rem;
+  text-align: center;
+  border: dotted 2px #979797;
+  position: relative;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #38424c;
+}
+

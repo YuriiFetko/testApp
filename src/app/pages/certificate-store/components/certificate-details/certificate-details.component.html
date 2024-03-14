@@ -1,0 +1,13 @@
+<ng-container *ngIf="certificate; else errorCertificate">
+  <div class="container">
+    <ul class="info-certificate">
+      <li><b>Common Name</b>: {{certificate.commonName}}</li>
+      <li><b>Common Name</b>: {{certificate.issuerCommonName}}</li>
+      <li><b>Valid From </b>: {{certificate.dateBefore | date: 'YYYY-MM-dd'}}</li>
+      <li><b>Valid To</b>: {{certificate.dateAfter | date: 'YYYY-MM-dd'}}</li>
+    </ul>
+  </div>
+</ng-container>
+<ng-template #errorCertificate>
+  <h3>Сталась помилка призавантаженні сертифіката</h3>
+</ng-template>
